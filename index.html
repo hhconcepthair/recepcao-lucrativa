@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manual da Recepção Lucrativa — Henry Hernandes</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0e0e0e; color: #e0e0e0; font-family: 'Georgia', serif; line-height: 1.7; }
+  a { color: #c4a050; }
+
+  .hero {
+    background: linear-gradient(180deg, #0e0e0e 0%, #1a1a1a 100%);
+    border-bottom: 1px solid #c4a050;
+    padding: 60px 20px 50px;
+    text-align: center;
+  }
+  .hero .tag {
+    display: inline-block;
+    border: 1px solid #c4a050;
+    color: #c4a050;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    margin-bottom: 28px;
+    font-family: sans-serif;
+  }
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 52px);
+    color: #fff;
+    line-height: 1.2;
+    max-width: 800px;
+    margin: 0 auto 20px;
+  }
+  .hero h1 span { color: #c4a050; }
+  .hero p.sub {
+    font-size: clamp(16px, 2.5vw, 20px);
+    color: #aaa;
+    max-width: 620px;
+    margin: 0 auto 40px;
+    font-style: italic;
+  }
+  .btn {
+    display: inline-block;
+    background: #c4a050;
+    color: #0e0e0e;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 18px 48px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: background 0.2s;
+  }
+  .btn:hover { background: #d4b060; color: #0e0e0e; }
+  .btn-sub { display: block; font-family: sans-serif; font-size: 12px; color: #888; margin-top: 10px; }
+
+  section { padding: 60px 20px; max-width: 760px; margin: 0 auto; }
+
+  .divider {
+    border: none;
+    border-top: 1px solid #c4a050;
+    max-width: 760px;
+    margin: 0 auto;
+    opacity: 0.4;
+  }
+
+  .section-label {
+    font-family: sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #c4a050;
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-size: clamp(22px, 4vw, 36px);
+    color: #fff;
+    margin-bottom: 24px;
+    line-height: 1.3;
+  }
+
+  p { margin-bottom: 16px; color: #c0c0c0; font-size: 17px; }
+  p strong { color: #fff; }
+
+  .pain-list { list-style: none; margin: 24px 0; }
+  .pain-list li {
+    padding: 14px 0 14px 28px;
+    border-bottom: 1px solid #2a2a2a;
+    color: #bbb;
+    font-size: 17px;
+    position: relative;
+  }
+  .pain-list li:before { content: '—'; position: absolute; left: 0; color: #c4a050; }
+
+  .author-box {
+    background: #1a1a1a;
+    border-left: 3px solid #c4a050;
+    padding: 32px;
+    margin: 32px 0;
+  }
+  .author-box .name { font-size: 22px; color: #c4a050; font-weight: bold; margin-bottom: 6px; }
+  .author-box .role { font-family: sans-serif; font-size: 13px; color: #888; margin-bottom: 16px; letter-spacing: 1px; }
+
+  .credentials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .credential {
+    background: #0e0e0e;
+    border: 1px solid #333;
+    padding: 8px 14px;
+    font-family: sans-serif;
+    font-size: 12px;
+    color: #aaa;
+  }
+
+  .includes { list-style: none; margin: 24px 0; }
+  .includes li {
+    padding: 16px 0 16px 36px;
+    border-bottom: 1px solid #1e1e1e;
+    font-size: 16px;
+    color: #c0c0c0;
+    position: relative;
+  }
+  .includes li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #c4a050;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .includes li strong { color: #fff; display: block; margin-bottom: 2px; }
+  .includes li span { font-size: 14px; color: #888; }
+
+  .for-who { list-style: none; margin: 24px 0; }
+  .for-who li {
+    padding: 12px 0 12px 28px;
+    color: #bbb;
+    font-size: 17px;
+    position: relative;
+    border-bottom: 1px solid #1e1e1e;
+  }
+  .for-who li:before { content: '→'; position: absolute; left: 0; color: #c4a050; }
+
+  .price-box {
+    background: #1a1a1a;
+    border: 1px solid #c4a050;
+    padding: 48px 32px;
+    text-align: center;
+    margin: 32px 0;
+  }
+  .price-box .price-label { font-family: sans-serif; font-size: 13px; letter-spacing: 2px; color: #888; margin-bottom: 8px; }
+  .price-box .price { font-size: 64px; color: #c4a050; font-weight: bold; line-height: 1; margin-bottom: 4px; }
+  .price-box .price-cents { font-size: 24px; }
+  .price-box .price-desc { font-family: sans-serif; font-size: 14px; color: #888; margin-bottom: 32px; font-style: italic; }
+  .price-box .guarantee {
+    font-family: sans-serif;
+    font-size: 13px;
+    color: #888;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #2a2a2a;
+  }
+
+  .quote {
+    border-left: 3px solid #c4a050;
+    padding: 20px 28px;
+    margin: 32px 0;
+    font-style: italic;
+    font-size: 20px;
+    color: #ddd;
+    background: #141414;
+  }
+
+  footer {
+    border-top: 1px solid #222;
+    padding: 32px 20px;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 12px;
+    color: #555;
+  }
+
+  @media (max-width: 600px) {
+    .price-box .price { font-size: 48px; }
+    .author-box { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="tag">Ebook Digital</div>
+  <h1>Sua recepção está te custando dinheiro todo dia —<br><span>e você nem sabe.</span></h1>
+  <p class="sub">Descubra o sistema completo que transformou minha recepção em máquina de agendamento e faturamento — em 16 anos de salão.</p>
+  <a href="https://kiwify.app/hvO1IyS" class="btn">QUERO O MANUAL AGORA — R$57</a>
+  <span class="btn-sub">Acesso imediato após a compra</span>
+</div>
+
+<!-- DOR -->
+<section>
+  <p class="section-label">O problema</p>
+  <h2>Você já parou para calcular quantas clientes perdeu por causa da recepção?</h2>
+  <p>Não as que reclamaram. As que simplesmente <strong>nunca voltaram.</strong></p>
+  <ul class="pain-list">
+    <li>A cliente que mandou mensagem no WhatsApp, recebeu uma resposta fria e sumiu.</li>
+    <li>A cliente que chegou no salão, ficou dois minutos parada sem ninguém olhar para ela — e foi embora.</li>
+    <li>A cliente que estava pronta para agendar, mas a recepcionista não soube conduzir a conversa.</li>
+    <li>A cliente que fez o cabelo, adorou o resultado, mas nunca recebeu pós-venda — e quando a mecha venceu, agendou no salão mais próximo.</li>
+  </ul>
+  <p>Isso acontece <strong>todo dia. Em silêncio. Sem que você perceba.</strong></p>
+  <p>E o pior: você está pagando salário para isso acontecer.</p>
+</section>
+
+<hr class="divider">
+
+<!-- AUTORIDADE -->
+<section>
+  <p class="section-label">Quem está falando</p>
+  <h2>Eu sei disso porque vivi.</h2>
+  <div class="author-box">
+    <div class="name">Henry Hernandes</div>
+    <div class="role">Empresário do setor de beleza · 22 anos de experiência</div>
+    <p>Comecei cortando cabelo na Praça da Sé por R$5. Quando montei meu primeiro salão, eram 3 cadeiras e 2 lavatórios no Tatuapé, zona leste de São Paulo.</p>
+    <p>Hoje tenho <strong>22 cadeiras, 7 lavatórios e uma equipe de 10 profissionais.</strong></p>
+    <p>E uma das maiores viradas do meu negócio aconteceu quando parei de tratar a recepção como cargo secundário — e comecei a tratar como o <strong>centro do faturamento.</strong></p>
+    <div class="credentials">
+      <span class="credential">Tony &amp; Guy · Londres</span>
+      <span class="credential">Embaixador Schwarzkopf Professional</span>
+      <span class="credential">ASK Academy · São Paulo</span>
+      <span class="credential">Hair Brasil</span>
+      <span class="credential">Beauty Fair</span>
+      <span class="credential">Artista Truss Hair</span>
+      <span class="credential">Instrutor KAMI.Co</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SOLUÇÃO -->
+<section>
+  <p class="section-label">A solução</p>
+  <h2>O Manual da Recepção Lucrativa</h2>
+  <div class="quote">"O manual que eu gostaria de ter tido quando comecei. Scripts, checklists e processos que uso no meu salão — construídos ao longo de 16 anos. Você não vai precisar errar o que eu já errei."</div>
+</section>
+
+<hr class="divider">
+
+<!-- INCLUSO -->
+<section>
+  <p class="section-label">O que está incluído</p>
+  <h2>Tudo que você recebe</h2>
+  <ul class="includes">
+    <li>
+      <strong>Script de primeiro contato com lead no WhatsApp</strong>
+      <span>A sequência exata para nunca mais deixar uma cliente sumir depois da primeira mensagem.</span>
+    </li>
+    <li>
+      <strong>Script de atendimento presencial</strong>
+      <span>Os primeiros 30 segundos que definem se a cliente vai voltar ou não.</span>
+    </li>
+    <li>
+      <strong>Script de resolução de problemas</strong>
+      <span>Como transformar uma cliente insatisfeita em cliente fiel.</span>
+    </li>
+    <li>
+      <strong>Script de oferta de serviço adicional</strong>
+      <span>Como aumentar o ticket de forma natural, sem forçar.</span>
+    </li>
+    <li>
+      <strong>Script de lembrete de vencimento de serviço</strong>
+      <span>Como recuperar a cliente antes que ela vá para o concorrente.</span>
+    </li>
+    <li>
+      <strong>Script de reativação de cliente inativa</strong>
+      <span>Como trazer de volta quem sumiu há meses com a mensagem certa.</span>
+    </li>
+    <li>
+      <strong>Checklist de rotina diária — Terça a Sábado</strong>
+      <span>O que a recepcionista deve fazer em cada dia da semana, do caixa ao pós-venda.</span>
+    </li>
+    <li>
+      <strong>Sistema de etiquetas WhatsApp</strong>
+      <span>Como organizar seus contatos por serviço para disparos certeiros e sem desperdício.</span>
+    </li>
+  </ul>
+</section>
+
+<hr class="divider">
+
+<!-- PARA QUEM -->
+<section>
+  <p class="section-label">Para quem é</p>
+  <h2>Esse manual é para você que...</h2>
+  <ul class="for-who">
+    <li>Tem um salão e sente que a recepção não performa como deveria</li>
+    <li>Já perdeu clientes por atendimento frio ou falta de follow-up</li>
+    <li>Quer agenda mais cheia sem aumentar investimento em anúncios</li>
+    <li>Precisa de ferramenta prática para treinar sua recepcionista</li>
+    <li>Quer parar de depender de você para resolver tudo na recepção</li>
+  </ul>
+</section>
+
+<hr class="divider">
+
+<!-- PREÇO -->
+<section>
+  <p class="section-label">Investimento</p>
+  <div class="price-box">
+    <div class="price-label">ACESSO COMPLETO AO MANUAL</div>
+    <div class="price">R$57</div>
+    <div class="price-desc">Por menos do que um serviço no seu salão, você tem o sistema completo que levou 16 anos para ser construído.</div>
+    <a href="https://kiwify.app/hvO1IyS" class="btn">QUERO O MANUAL AGORA</a>
+    <div class="guarantee">🔒 7 dias de garantia — se não ver diferença, devolvemos 100% do seu dinheiro.</div>
+  </div>
+</section>
+
+<!-- FECHAMENTO -->
+<section style="text-align:center; padding-bottom: 80px;">
+  <h2>Uma recepção bem treinada é a diferença entre uma agenda vazia e um salão lotado.</h2>
+  <p style="margin-bottom:32px;">Você já tem o salão. Já tem a equipe. Agora é hora de ter o sistema.</p>
+  <a href="https://kiwify.app/hvO1IyS" class="btn">QUERO O MANUAL AGORA — R$57</a>
+  <span class="btn-sub">Acesso imediato · PDF completo · 7 dias de garantia</span>
+</section>
+
+<footer>
+  © 2025 Henry Hernandes · Manual da Recepção Lucrativa<br>
+  Empresário do setor de beleza · 22 anos de experiência
+</footer>
+
+</body>
+</html>
